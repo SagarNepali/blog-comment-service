@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SEC" />
+        <module name="W3D1-MVC-1" />
+        <module name="W3D3-Boot" />
+        <module name="W4-MICROSERVICE-COMMENTS" />
+        <module name="MVC" />
+        <module name="W3D3-REST" />
+        <module name="W3D2-VAL" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="MVC" options="-endorseddirs $PROJECT_DIR$/target/endorsed" />
+      <module name="SEC" options="-endorseddirs $PROJECT_DIR$/target/endorsed" />
+      <module name="W3D1-MVC-1" options="-endorseddirs $PROJECT_DIR$/target/endorsed" />
+      <module name="W3D2-VAL" options="-endorseddirs $PROJECT_DIR$/target/endorsed" />
+      <module name="W3D3-Boot" options="-parameters" />
+      <module name="W3D3-REST" options="-parameters" />
+      <module name="W4-MICROSERVICE-COMMENTS" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: blog-comment-service
+  datasource:
+    password: Groople123
+    username: root
+    url: jdbc:mysql://localhost:3306/blog_comments
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        format_sql: true
+      show-sql: true
+      generate-ddl: true
+    sql:
+      init:
+        mode: always
+server:
+  port: 8080
