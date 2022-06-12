@@ -40,11 +40,10 @@ public class CommentRestController {
     }
 
 
-    /*
-    @GetMapping(value="/post/{postid}/comment/", produces="application/json")
+    @GetMapping(value="/post/{postid}", produces="application/json")
     public List<Comment> getAllCommentsOfPost(@PathVariable("postid") int postid) {
         return commentService.getAllByPostId(postid);
-    }*/
+    }
 
 
 

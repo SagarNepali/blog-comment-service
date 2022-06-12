@@ -25,6 +25,11 @@ public class CommentService {
         return c;
     }
 
+    public List<Comment> getAllByPostId(int postId){
+        List<Comment> commentList = commentRepository.findByPostId(postId);
+        return commentList;
+    }
+
     public Comment add(Comment comment) {
         return commentRepository.save(comment);
     }
