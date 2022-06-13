@@ -2,6 +2,7 @@ package edu.mum.cs544.service;
 
 import edu.mum.cs544.exception.CommentNotFoundException;
 import edu.mum.cs544.domain.Comment;
+import edu.mum.cs544.exception.PostNotFoundException;
 import edu.mum.cs544.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -54,6 +55,13 @@ public class CommentService {
         commentRepository.delete(c);
     }
 
+    public void deleteAllByPostId(Integer postId) throws CommentNotFoundException{
+        commentRepository.deleteAllByPostId(postId);
+    }
+
+    public void deleteAllByUserId(Integer userId) throws CommentNotFoundException{
+        commentRepository.deleteAllByUserId(userId);
+    }
 //    public List<Comment> getAllByPostId(int postid) {
 //        return commentRepository.findByPostId(postid);
 //    }

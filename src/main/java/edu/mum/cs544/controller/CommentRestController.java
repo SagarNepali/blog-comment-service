@@ -24,25 +24,38 @@ public class CommentRestController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Comment add(@RequestBody Comment comment) throws PostNotFoundException {
+    public Comment add(@RequestBody Comment comment) {
         return commentService.add(comment);
     }
 
     @PutMapping(value= "/{id}", consumes = "application/json")
-    public Comment update(@RequestBody Comment comment,@PathVariable Integer id) throws CommentNotFoundException,PostNotFoundException {
+    public Comment update(@RequestBody Comment comment,@PathVariable Integer id) throws CommentNotFoundException {
         return commentService.update(comment,id);
     }
 
-    @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Integer id) throws CommentNotFoundException,PostNotFoundException{
-        commentService.delete(id);
+
+
+    @GetMapping(value="/post/{postId}", produces="application/json")
+    public List<Comment> getAllCommentsOfPost(@PathVariable("postId") int postId) {
+        return commentService.getAllByPostId(postId);
     }
 
+    @DeleteMapping("/{commentId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Integer commentId) throws CommentNotFoundException{
+        commentService.delete(commentId);
+    }
 
-    @GetMapping(value="/post/{postid}", produces="application/json")
-    public List<Comment> getAllCommentsOfPost(@PathVariable("postid") int postid) {
-        return commentService.getAllByPostId(postid);
+    @DeleteMapping("/post/{postId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteAllByPostId(@PathVariable Integer postId) throws CommentNotFoundException{
+        commentService.deleteAllByPostId(postId);
+    }
+
+    @DeleteMapping("/user/{userId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteAllByUserId(@PathVariable Integer userId) throws CommentNotFoundException{
+         commentService.deleteAllByUserId(userId);
     }
 
 
