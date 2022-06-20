@@ -10,6 +10,7 @@
         <module name="W3D1-MVC-1" />
         <module name="W3D3-Boot" />
         <module name="W4-MICROSERVICE-COMMENTS" />
+        <module name="blog-comment-service" />
         <module name="MVC" />
         <module name="W3D3-REST" />
         <module name="W3D2-VAL" />
@@ -25,6 +26,7 @@
       <module name="W3D3-Boot" options="-parameters" />
       <module name="W3D3-REST" options="-parameters" />
       <module name="W4-MICROSERVICE-COMMENTS" options="-parameters" />
+      <module name="blog-comment-service" options="-parameters" />
     </option>
   </component>
 </project>
